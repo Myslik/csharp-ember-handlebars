@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ember.Handlebars", "Ember.Handlebars\Ember.Handlebars.csproj", "{97256AA6-06C4-48E6-974C-0900637B13D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ember.Handlebars.Example", "Ember.Handlebars.Example\Ember.Handlebars.Example.csproj", "{CDA17FCB-7571-4820-AD94-83DBEF169A8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97256AA6-06C4-48E6-974C-0900637B13D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97256AA6-06C4-48E6-974C-0900637B13D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97256AA6-06C4-48E6-974C-0900637B13D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97256AA6-06C4-48E6-974C-0900637B13D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA17FCB-7571-4820-AD94-83DBEF169A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA17FCB-7571-4820-AD94-83DBEF169A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA17FCB-7571-4820-AD94-83DBEF169A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA17FCB-7571-4820-AD94-83DBEF169A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
