@@ -47,7 +47,8 @@ public class EmberTemplateTransform : IBundleTransform
             using (var reader = info.OpenText())
             {
                 var name = rootPath.MakeRelativeUri(new Uri(info.FullName)).ToString();
-                builder.Register(Path.ChangeExtension(name, null).Replace(Path.DirectorySeparatorChar, '/'), reader.ReadToEnd());
+                builder.Register(Path.ChangeExtension(name, null).Replace(Path.DirectorySeparatorChar, '/'),
+                    reader.ReadToEnd());
             }
         }
         var minifier = new Minifier();
