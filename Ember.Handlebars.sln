@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B84EFB
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ember.Handlebars.ExampleWebAPI", "Ember.Handlebars.ExampleWebAPI\Ember.Handlebars.ExampleWebAPI.csproj", "{1AF3E25C-659A-4611-BC08-B4559B4787D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{E2DE8C02-CA73-4054-AC5D-2591CA653956}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,8 +30,16 @@ Global
 		{CDA17FCB-7571-4820-AD94-83DBEF169A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA17FCB-7571-4820-AD94-83DBEF169A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA17FCB-7571-4820-AD94-83DBEF169A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AF3E25C-659A-4611-BC08-B4559B4787D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AF3E25C-659A-4611-BC08-B4559B4787D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AF3E25C-659A-4611-BC08-B4559B4787D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AF3E25C-659A-4611-BC08-B4559B4787D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CDA17FCB-7571-4820-AD94-83DBEF169A8A} = {E2DE8C02-CA73-4054-AC5D-2591CA653956}
+		{1AF3E25C-659A-4611-BC08-B4559B4787D8} = {E2DE8C02-CA73-4054-AC5D-2591CA653956}
 	EndGlobalSection
 EndGlobal
