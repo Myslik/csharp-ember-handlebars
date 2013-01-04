@@ -1,11 +1,30 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
     <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sample">
+    <meta name="author" content="Thiago Santos - MilkyWayJoe"><!DOCTYPE html>
+    <style>
+      body {
+        padding-top: 60px; 
+      }
+    </style>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="@Url.Content("~/Images/apple-touch-icon-144-precomposed.png")">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="@Url.Content("~/Images/apple-touch-icon-114-precomposed.png")">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="@Url.Content("~/Images/apple-touch-icon-72-precomposed.png")">
+                    <link rel="apple-touch-icon-precomposed" href="@Url.Content("~/Images/apple-touch-icon-57-precomposed.png")">
+                                   <link rel="shortcut icon" href="@Url.Content("~/Images/favicon.png")">
 </head>
 <body>
     @RenderBody()

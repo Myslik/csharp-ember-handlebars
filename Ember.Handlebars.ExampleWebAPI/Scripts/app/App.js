@@ -4,7 +4,7 @@
 
 App = Em.Application.create({
 
-    appName: 'Cool App',
+    name: 'Cool App',
 
     ApplicationController: _appController,
     ApplicationView: _appView

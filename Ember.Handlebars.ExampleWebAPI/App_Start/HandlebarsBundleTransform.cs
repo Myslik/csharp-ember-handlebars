@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
-using System.Text;
 using System.Web;
+using System.Globalization;
 using System.Web.Optimization;
-using Microsoft.Ajax.Utilities;
 
 namespace Ember.Handlebars.ExampleWebAPI
 {
@@ -12,18 +10,13 @@ namespace Ember.Handlebars.ExampleWebAPI
     {
         public void Process(BundleContext context, BundleResponse response)
         {
-            Ember.Handlebars.TemplateBuilder builder = new Ember.Handlebars.TemplateBuilder();
+            var builder = new Ember.Handlebars.TemplateBuilder();
             var usTextInfo = new CultureInfo("en-US", false).TextInfo;
 
             foreach (var assetFile in response.Files)
             {
-                var template = File.ReadAllText(assetFile.FullName)
-                                   .Replace("\r", string.Empty)
-                                   .Replace("\n", string.Empty)
-                                   .Replace("\t", string.Empty);
-
-                var templateName = Path.GetFileNameWithoutExtension(assetFile.FullName);
-                templateName = usTextInfo.ToTitleCase(templateName).Replace("_", string.Empty);
+                var template = File.ReadAllText(assetFile.FullName);
+                var templateName = Path.GetFileNameWithoutExtension(assetFile.FullName).ToCamelCase();                
                 builder.Register(templateName, template);
             }
 
