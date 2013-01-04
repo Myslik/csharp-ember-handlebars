@@ -1,22 +1,15 @@
-﻿{{view App.NavBarView}}
+﻿{{view App.NavbarView}}
 
 <div id="wrap">
   <div class="container">
-    <h1>Bootstrap starter template</h1>
-    <p>
-      Use this document as a way to quick start any new project.<br> 
-    All you get is this message and a barebones HTML document.
-  </p>
-    [replace the content of this div with an outlet]
-
-
+    {{outlet}}
   </div>
   <div id="push"></div>
 </div>
 
 <div id="footer">
   <div class="container">
-    &copy;2013 [your name goes here]
+    &copy;2013 {{unbound App.author}}
   </div>
 </div>
 

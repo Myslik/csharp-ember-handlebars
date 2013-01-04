@@ -9,14 +9,14 @@
       <a class="brand" href="#">{{unbound App.name}}</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active">
-            <a href="#">Home</a>
+          <li>
+            {{#linkTo "home"}}Home{{/linkTo}}
           </li>
           <li>
-            <a href="#about">About</a>
+            {{#linkTo "about"}}About{{/linkTo}}
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            {{#linkTo "contact"}}Contact{{/linkTo}}
           </li>
         </ul>
       </div>
