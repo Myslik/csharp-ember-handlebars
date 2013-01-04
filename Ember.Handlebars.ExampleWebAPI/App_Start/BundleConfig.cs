@@ -15,7 +15,7 @@ namespace Ember.Handlebars.ExampleWebAPI
                         "~/scripts/vendor/ember.js"));
 
             bundles.Add(new Bundle("~/bundles/modernizr", new JsMinify()).Include(
-                        "~/scripts/modernizr-*"));
+                        "~/scripts/vendor/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform())
                         .Include("~/scripts/app/templates/*.handlebars"));
@@ -24,11 +24,14 @@ namespace Ember.Handlebars.ExampleWebAPI
                         "~/scripts/app/models/*.js",
                         "~/scripts/app/views/*.js",
                         "~/scripts/app/controllers/*.js",
+                        "~/scripts/app/routes/*.js",
                         "~/scripts/app/App.js"));
 
             bundles.Add(new Bundle("~/Content/css", new CssMinify()).Include(
                 "~/content/bootstrap.css",
+                "~/content/bootstrap-stickyfooter.css",
                 "~/content/bootstrap-responsive.css"));
+
         }
     }
 }

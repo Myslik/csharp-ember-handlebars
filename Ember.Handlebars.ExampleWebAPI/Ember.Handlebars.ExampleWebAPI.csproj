@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-stickyfooter.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -149,12 +150,16 @@
     <Content Include="Images\favicon.png" />
     <Content Include="Images\glyphicons-halflings-white.png" />
     <Content Include="Images\glyphicons-halflings.png" />
-    <Content Include="Scripts\app\templates\application.handlebars" />
+    <Content Include="Scripts\app\templates\application.handlebars">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\vendor\jquery-1.8.3.intellisense.js" />
     <EmbeddedResource Include="Scripts\vendor\ember.js" />
     <Content Include="Scripts\app\App.js" />
     <Content Include="Scripts\app\controllers\ApplicationController.js" />
+    <None Include="Scripts\app\templates\nav-bar.handlebars" />
     <Content Include="Scripts\app\views\ApplicationView.js" />
+    <Content Include="Scripts\app\views\NavBarView.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
     <Content Include="Scripts\vendor\handlebars.js" />
     <Content Include="Scripts\vendor\handlebars.runtime.js" />
@@ -193,6 +198,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\app\models\" />
+    <Folder Include="Scripts\app\routes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
