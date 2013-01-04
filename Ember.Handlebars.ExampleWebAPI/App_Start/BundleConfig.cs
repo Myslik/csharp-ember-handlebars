@@ -21,11 +21,11 @@ namespace Ember.Handlebars.ExampleWebAPI
                         .Include("~/scripts/app/templates/*.handlebars"));
 
             bundles.Add(new Bundle("~/bundles/app", new JsMinify()).Include(
+                        "~/scripts/app/App.js",
                         "~/scripts/app/models/*.js",
                         "~/scripts/app/views/*.js",
                         "~/scripts/app/controllers/*.js",
-                        "~/scripts/app/routes/*.js",
-                        "~/scripts/app/App.js"));
+                        "~/scripts/app/routes/*.js"));
 
             bundles.Add(new Bundle("~/Content/css", new CssMinify()).Include(
                 "~/content/bootstrap.css",

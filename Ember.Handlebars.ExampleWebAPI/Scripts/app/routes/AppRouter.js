@@ -1,6 +1,13 @@
-﻿/// <reference path="../../vendor/ember.js" />
+﻿/// <reference path="../App.js" />
+/// <reference path="../../vendor/ember.js" />
 
-var _router = Em.Router.map(function (match) {
-    match('/').to('home');
-    match('/about').to('about');
+App.Router.map(function (match) {
+    match("/").to("home");
+    match("/about").to("about");
+    match("/contact").to("contact");
 });
+
+App.HomeRoute = Em.Route.extend();
+App.AboutRoute = Em.Route.extend();
+App.ContactRoute = Em.Route.extend();
+

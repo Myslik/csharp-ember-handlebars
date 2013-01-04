@@ -1,4 +1,6 @@
 ﻿/// <reference path="../../vendor/ember.js" />
-var _navbarView = Em.View.extend({
-    templateName: 'navBar'
+/// <reference path="../App.js" />
+
+App.NavbarView = Em.View.extend({
+    templateName: 'navbar'
 })

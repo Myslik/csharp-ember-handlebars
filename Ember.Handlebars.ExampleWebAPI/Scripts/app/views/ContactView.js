@@ -1,5 +1,6 @@
 ﻿/// <reference path="../../vendor/ember.js" />
+/// <reference path="../App.js" />
 
-var _contactView = Em.View.extend({
+App.ContactView = Em.View.extend({
     templateName: 'contact'
 })

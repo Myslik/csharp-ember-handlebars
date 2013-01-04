@@ -1,5 +1,6 @@
 ﻿/// <reference path="../../vendor/ember.js" />
+/// <reference path="../App.js" />
 
-var _appView = Em.View.extend({
+App.ApplicationView = Em.View.extend({
     templateName: 'application'
-});
+})

@@ -1,5 +1,4 @@
 ﻿/// <reference path="../../vendor/ember.js" />
+/// <reference path="../App.js" />
 
-var _appController = Em.Controller.extend({
-
-});
+App.ApplicationController = Em.Controller.extend();

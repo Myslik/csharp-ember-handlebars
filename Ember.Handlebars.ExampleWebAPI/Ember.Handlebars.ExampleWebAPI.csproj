@@ -162,7 +162,7 @@
     <EmbeddedResource Include="Scripts\vendor\ember.js" />
     <Content Include="Scripts\app\App.js" />
     <Content Include="Scripts\app\controllers\ApplicationController.js" />
-    <None Include="Scripts\app\templates\nav-bar.handlebars" />
+    <None Include="Scripts\app\templates\navbar.handlebars" />
     <Content Include="Scripts\app\views\AboutView.js" />
     <Content Include="Scripts\app\views\ApplicationView.js" />
     <Content Include="Scripts\app\views\ContactView.js" />
