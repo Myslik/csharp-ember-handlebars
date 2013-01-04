@@ -11,7 +11,7 @@ builder.Register("application", "<h1>{{App.name}}</h1>");
 builder.ToString();
 ```
     
-=>
+will return
     
 ```javascript
 Ember.TEMPLATES["application"] = Ember.Handlebars.template(
