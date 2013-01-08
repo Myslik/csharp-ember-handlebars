@@ -5,7 +5,8 @@ csharp-ember-handlebars
 
 ## Example
 
-In order to register a template, the builder expectes a template name and its corresponding markup.
+In order to register a template, the builder expects a string with the template name and and another 
+with its corresponding markup:
 
 ```csharp
 var builder = new Ember.Handlebars.TemplateBuilder();
@@ -27,20 +28,30 @@ Ember.TEMPLATES["application"] = Ember.Handlebars.template(
 );
 ```
 
-The above shows the basic template registration of templates with this library but going forward you might want 
-to add this functionality as part of your application's build process including this functionality directly into
-the `BundleConfig` class.
+The above shows the basic registration of templates, but going forward you might want to add this functionality 
+as part of your application's build process including this functionality directly into the `BundleConfig` class.
 
 ## Built-in IBundleTransform Implementation
-This library now a built-in implementation of `IBundleTransform` which can be used directly in ASP.NET MVC's 
+This library now has a built-in implementation of `IBundleTransform` which can be used directly in ASP.NET MVC's 
 `BundleConfig` class as shown below:
 
 ```csharp
 bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform())
        .Include("~/scripts/app/templates/*.handlebars"));
 ```
+
+The `EmberHandlebarsBundleTransform` class has the flag `MinifyTemplates` which specifies whether or not the returning 
+JavaScript will be minified. The default is `true`, but if for some reason you need the template functions not to be 
+minified, do the following:
+
+```csharp
+bundles.Add(new Bundle("~/bundles/templates", 
+            new EmberHandlebarsBundleTransform() { MinifyTemplates = false })
+       .Include("~/scripts/app/templates/*.handlebars"));
+```
+
 Note: The built-in `EmberHandlebarsBundleTransform` allows your templates to have whichever extension 
-that better suits your development process. The example above uses *.handlebars as an extension but it could be 
+that better suits your development process. The examples above use *.handlebars as an extension but it could be 
 something else, like *.html for example.
 
 ## Creating a custom implementation of IBundleTransform
