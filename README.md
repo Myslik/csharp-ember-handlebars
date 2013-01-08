@@ -39,7 +39,7 @@ This library now a built-in implementation of `IBundleTransform` which can be us
 bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform())
        .Include("~/scripts/app/templates/*.handlebars"));
 ```
-Note: The built-in `EmberHandlebarsBundleTransform` allows your template follows to use use whichever extension 
+Note: The built-in `EmberHandlebarsBundleTransform` allows your templates to have whichever extension 
 that better suits your development process. The example above uses *.handlebars as an extension but it could be 
 something else, like *.html for example.
 
