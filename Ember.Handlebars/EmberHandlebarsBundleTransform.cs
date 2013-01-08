@@ -1,0 +1,39 @@
+﻿using System;
+using System.IO;
+using System.Web;
+using System.Web.Optimization;
+using Microsoft.Ajax.Utilities;
+
+public class EmberHandlebarsBundleTransform : IBundleTransform {
+    
+    private bool minifyTemplates = true;
+    
+    public bool MinifyTemplates {
+        get { return this.minifyTemplates; }
+        set { this.minifyTemplates = value; }
+    }
+
+    public void Process( BundleContext context, BundleResponse response ) {
+        var builder = new Ember.Handlebars.TemplateBuilder();
+
+        foreach ( var assetFile in response.Files ) {
+            var template = File.ReadAllText( assetFile.FullName );
+            var templateName = Path.GetFileNameWithoutExtension( assetFile.FullName );
+            builder.Register( templateName, template );
+        }
+
+        var content = builder.ToString();
+        if ( minifyTemplates ) {
+            var minifier = new Minifier();
+            var c = minifier.MinifyJavaScript( builder.ToString() );
+            if ( minifier.ErrorList.Count <= 0 ) {
+                content = c;
+            }
+        }
+
+        response.ContentType = "text/javascript";
+        response.Cacheability = HttpCacheability.Public;
+        response.Content = content;
+
+    }
+}
