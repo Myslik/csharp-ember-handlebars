@@ -1,10 +1,10 @@
-﻿using Moravia.Utils;
-using System.Diagnostics;
-using System.Reflection;
-using System.Text;
-
-namespace Ember.Handlebars
+﻿namespace Ember.Handlebars
 {
+    using Myslik.Utils;
+    using System.Diagnostics;
+    using System.Reflection;
+    using System.Text;
+
     public class Compiler
     {
         private ScriptEngine _engine = null;
@@ -14,16 +14,9 @@ namespace Ember.Handlebars
         {
             _engine = new ScriptEngine("jscript");
 
-            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("sandbox.js")));
-            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("compile.js")));
-            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("Scripts", "ember.js")));
-            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("Scripts", "handlebars-1.0.rc.2.js")));
+            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("compiler.js")));
 
-            _vm = _engine.Parse(
-                LoadResource("sandbox.js")
-                + LoadResource("Scripts", "handlebars-1.0.rc.2.js")
-                + LoadResource("Scripts", "ember.js")
-                + LoadResource("compile.js"));
+            _vm = _engine.Parse(LoadResource("compiler.js"));
         }
 
         
@@ -32,19 +25,17 @@ namespace Ember.Handlebars
             get { return this._vm; }
         }
 
-        private static string LoadResource(string name) { return LoadResource("Javascript", name); }
-
-        private static string LoadResource(string folder, string name)
+        private static string LoadResource(string name)
         {
             var asm = Assembly.GetCallingAssembly();
-            var stream = asm.GetManifestResourceStream(string.Format("Ember.{0}.{1}", folder, name));
+            var stream = asm.GetManifestResourceStream(string.Format("Ember.{0}", name));
             var reader = new System.IO.StreamReader(stream);
             return reader.ReadToEnd();
         }
 
         public string Precompile(string template)
         {
-            return (string)VM.CallMethod("compile", template);
+            return (string)VM.CallMethod("precompile", template);
         }
     }
 

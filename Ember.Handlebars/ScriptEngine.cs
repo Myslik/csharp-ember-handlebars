@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
-using System.Threading;
-
-namespace Moravia.Utils
+﻿namespace Myslik.Utils
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using System.Runtime.InteropServices;
+    using System.Runtime.Serialization;
+    using System.Threading;
+
     /// <summary>
     /// Represents a Windows Script Engine such as JScript, VBScript, etc.
     /// </summary>

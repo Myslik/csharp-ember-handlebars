@@ -16,9 +16,12 @@ public class EmberHandlebarsBundleTransform : IBundleTransform {
     public void Process( BundleContext context, BundleResponse response ) {
         var builder = new Ember.Handlebars.TemplateBuilder();
 
+        
+
         foreach ( var assetFile in response.Files ) {
-            var template = File.ReadAllText( assetFile.FullName );
-            var templateName = Path.GetFileNameWithoutExtension( assetFile.FullName );
+            var path = context.HttpContext.Server.MapPath(assetFile.VirtualPath);
+            var template = File.ReadAllText( path );
+            var templateName = Path.GetFileNameWithoutExtension( path );
             builder.Register( templateName, template );
         }
 
