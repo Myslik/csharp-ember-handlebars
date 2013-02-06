@@ -15,4 +15,7 @@ var document = {
     }
 };
 var console = {};
+var window = {
+    document: document
+};
 var $ = jQuery;

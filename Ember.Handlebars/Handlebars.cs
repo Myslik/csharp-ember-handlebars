@@ -1,4 +1,5 @@
 ﻿using Moravia.Utils;
+using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 
@@ -12,10 +13,16 @@ namespace Ember.Handlebars
         public Compiler()
         {
             _engine = new ScriptEngine("jscript");
+
+            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("sandbox.js")));
+            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("compile.js")));
+            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("Scripts", "ember.js")));
+            Debug.Assert(!string.IsNullOrWhiteSpace(LoadResource("Scripts", "handlebars-1.0.rc.2.js")));
+
             _vm = _engine.Parse(
                 LoadResource("sandbox.js")
-                + LoadResource("handlebars.js")
-                + LoadResource("ember.js")
+                + LoadResource("Scripts", "handlebars-1.0.rc.2.js")
+                + LoadResource("Scripts", "ember.js")
                 + LoadResource("compile.js"));
         }
 
@@ -25,10 +32,12 @@ namespace Ember.Handlebars
             get { return this._vm; }
         }
 
-        private static string LoadResource(string name)
+        private static string LoadResource(string name) { return LoadResource("Javascript", name); }
+
+        private static string LoadResource(string folder, string name)
         {
             var asm = Assembly.GetCallingAssembly();
-            var stream = asm.GetManifestResourceStream("Ember.Javascript." + name);
+            var stream = asm.GetManifestResourceStream(string.Format("Ember.{0}.{1}", folder, name));
             var reader = new System.IO.StreamReader(stream);
             return reader.ReadToEnd();
         }
