@@ -1,7 +1,6 @@
 ﻿/// <reference path="../vendor/ember.js" />
 
-App = Em.Application.create({
-    autoinit: false,
+window.App = Em.Application.create({
     name: 'Cool App',
     author: 'Your name here'
 });

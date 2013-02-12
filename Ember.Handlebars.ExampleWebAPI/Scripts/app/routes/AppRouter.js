@@ -1,10 +1,9 @@
 ﻿/// <reference path="../App.js" />
 /// <reference path="../../vendor/ember.js" />
 
-App.Router.map(function (match) {
-    match("/").to("home");
-    match("/about").to("about");
-    match("/contact").to("contact");
+App.Router.map(function () {
+    this.route("about", { path: "/about" });
+    this.route("contact", { path: "/contact" });
 });
 
 App.HomeRoute = Em.Route.extend();
