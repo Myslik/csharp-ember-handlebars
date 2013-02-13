@@ -143,8 +143,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="App_Readme\Handlebarsjs_README.md" />
-    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
     <Content Include="Images\apple-touch-icon-114-precomposed.png" />
     <Content Include="Images\apple-touch-icon-144-precomposed.png" />
     <Content Include="Images\apple-touch-icon-57-precomposed.png" />
@@ -154,28 +152,31 @@
     <Content Include="Images\glyphicons-halflings.png" />
     <Content Include="Scripts\app\controllers\NavbarController.js" />
     <Content Include="Scripts\app\routes\AppRouter.js" />
-    <Content Include="Scripts\app\templates\application.handlebars">
+    <None Include="Scripts\app\templates\application.hbs">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Scripts\app\templates\home.handlebars" />
-    <Content Include="Scripts\app\templates\about.handlebars" />
-    <Content Include="Scripts\app\templates\contact.handlebars" />
-    <None Include="Scripts\vendor\jquery-1.8.3.intellisense.js" />
-    <EmbeddedResource Include="Scripts\vendor\ember.js" />
+    </None>
+    <None Include="Scripts\app\templates\index.hbs" />
+    <None Include="Scripts\app\templates\about.hbs" />
+    <None Include="Scripts\app\templates\contact.hbs" />
+    <Content Include="App_Readme\Handlebarsjs_README.md" />
+    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
+    <None Include="Scripts\vendor\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.min.map" />
     <Content Include="Scripts\app\App.js" />
     <Content Include="Scripts\app\controllers\ApplicationController.js" />
-    <None Include="Scripts\app\templates\navbar.handlebars" />
+    <None Include="Scripts\app\templates\navbar.hbs" />
     <Content Include="Scripts\app\views\AboutView.js" />
     <Content Include="Scripts\app\views\ApplicationView.js" />
     <Content Include="Scripts\app\views\ContactView.js" />
     <Content Include="Scripts\app\views\HomeView.js" />
     <Content Include="Scripts\app\views\NavbarView.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
+    <Content Include="Scripts\vendor\ember.js" />
     <Content Include="Scripts\vendor\handlebars.js" />
     <Content Include="Scripts\vendor\handlebars.runtime.js" />
     <Content Include="Scripts\vendor\headless-ember.js" />
-    <Content Include="Scripts\vendor\jquery-1.8.3.js" />
-    <Content Include="Scripts\vendor\jquery-1.8.3.min.js" />
     <Content Include="Scripts\vendor\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -211,12 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ember.Handlebars\Ember.Handlebars.csproj">
-      <Project>{97256aa6-06c4-48e6-974c-0900637b13d0}</Project>
-      <Name>Ember.Handlebars</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
