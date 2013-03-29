@@ -9,7 +9,7 @@ namespace Ember.Handlebars.ExampleWebAPI {
                         "~/scripts/vendor/jquery-{version}.js",
                         "~/scripts/vendor/bootstrap.js",
                         "~/scripts/vendor/handlebars.runtime.js",
-                        "~/scripts/vendor/ember.js"));
+                        "~/scripts/vendor/ember-1.0.0-rc.1.js"));
 
             bundles.Add(new Bundle("~/bundles/modernizr", new JsMinify()).Include(
                         "~/scripts/vendor/modernizr-*"));

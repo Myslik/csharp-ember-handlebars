@@ -162,6 +162,7 @@
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
     <None Include="Scripts\vendor\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\vendor\ember-1.0.0-rc.1.js" />
     <Content Include="Scripts\vendor\jquery-1.9.1.js" />
     <Content Include="Scripts\vendor\jquery-1.9.1.min.js" />
     <Content Include="Scripts\vendor\jquery-1.9.1.min.map" />
@@ -174,7 +175,6 @@
     <Content Include="Scripts\app\views\HomeView.js" />
     <Content Include="Scripts\app\views\NavbarView.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
-    <Content Include="Scripts\vendor\ember.js" />
     <Content Include="Scripts\vendor\handlebars.js" />
     <Content Include="Scripts\vendor\handlebars.runtime.js" />
     <Content Include="Scripts\vendor\headless-ember.js" />
