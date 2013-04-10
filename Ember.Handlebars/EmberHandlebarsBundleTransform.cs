@@ -19,16 +19,16 @@ public class EmberHandlebarsBundleTransform : IBundleTransform {
         
 
         foreach ( var assetFile in response.Files ) {
-            var path = context.HttpContext.Server.MapPath(assetFile.VirtualPath);
+            var path = context.HttpContext.Server.MapPath(assetFile.VirtualFile.VirtualPath.Replace("/", "\\"));
             var template = File.ReadAllText( path );
-            var templateName = Path.GetFileNameWithoutExtension( path );
+            var templateName = Path.GetFileNameWithoutExtension( path ).Replace("-", "/");
             builder.Register( templateName, template );
         }
 
         var content = builder.ToString();
         if ( minifyTemplates ) {
             var minifier = new Minifier();
-            var c = minifier.MinifyJavaScript( builder.ToString() );
+            var c = minifier.MinifyJavaScript(content);
             if ( minifier.ErrorList.Count <= 0 ) {
                 content = c;
             }

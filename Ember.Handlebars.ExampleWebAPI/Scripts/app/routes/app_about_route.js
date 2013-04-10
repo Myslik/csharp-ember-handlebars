@@ -1,0 +1,1 @@
+﻿App.AppAboutRoute = Em.Route.extend()

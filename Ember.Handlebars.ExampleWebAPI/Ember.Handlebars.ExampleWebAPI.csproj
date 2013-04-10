@@ -49,7 +49,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -63,7 +63,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0-alpha1\lib\net40\System.Web.Optimization.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0-Beta1\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -140,8 +140,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-stickyfooter.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\apple-touch-icon-114-precomposed.png" />
@@ -151,34 +151,38 @@
     <Content Include="Images\favicon.png" />
     <Content Include="Images\glyphicons-halflings-white.png" />
     <Content Include="Images\glyphicons-halflings.png" />
-    <Content Include="Scripts\app\controllers\NavbarController.js" />
-    <Content Include="Scripts\app\routes\AppRouter.js" />
+    <Content Include="Scripts\app\extensions\webapi_adapter.js" />
+    <Content Include="Scripts\app\extensions\webapi_serializer.js" />
     <None Include="Scripts\app\templates\application.hbs">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Scripts\app\templates\index.hbs" />
-    <None Include="Scripts\app\templates\about.hbs" />
-    <None Include="Scripts\app\templates\contact.hbs" />
-    <Content Include="App_Readme\Handlebarsjs_README.md" />
-    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
-    <None Include="Scripts\vendor\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\vendor\ember-1.0.0-rc.1.js" />
-    <Content Include="Scripts\vendor\jquery-1.9.1.js" />
-    <Content Include="Scripts\vendor\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\vendor\jquery-1.9.1.min.map" />
-    <Content Include="Scripts\app\App.js" />
-    <Content Include="Scripts\app\controllers\ApplicationController.js" />
-    <None Include="Scripts\app\templates\navbar.hbs" />
-    <Content Include="Scripts\app\views\AboutView.js" />
-    <Content Include="Scripts\app\views\ApplicationView.js" />
-    <Content Include="Scripts\app\views\ContactView.js" />
-    <Content Include="Scripts\app\views\HomeView.js" />
-    <Content Include="Scripts\app\views\NavbarView.js" />
-    <Content Include="Scripts\vendor\bootstrap.js" />
-    <Content Include="Scripts\vendor\handlebars.js" />
-    <Content Include="Scripts\vendor\handlebars.runtime.js" />
-    <Content Include="Scripts\vendor\headless-ember.js" />
-    <Content Include="Scripts\vendor\modernizr-2.6.2.js" />
+    <None Include="Scripts\app\templates\app-home.hbs" />
+    <None Include="Scripts\app\templates\app-about.hbs" />
+    <None Include="Scripts\app\templates\app-contact.hbs" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\app\routes\app_contact_route.js" />
+    <Content Include="Scripts\app\routes\app_about_route.js" />
+    <Content Include="Scripts\app\routes\app_home_route.js" />
+    <Content Include="Scripts\app\routes\app_route.js" />
+    <Content Include="Scripts\app\routes\index_route.js" />
+    <Content Include="Scripts\app\setup\router.js" />
+    <Content Include="Scripts\app\setup\store.js" />
+    <Content Include="Scripts\ember-1.0.0-rc.2.js" />
+    <Content Include="Scripts\ember-1.0.0-rc.2.min.js" />
+    <Content Include="Scripts\ember-data.js" />
+    <Content Include="Scripts\ember-data.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\app\app.js" />
+    <None Include="Scripts\app\templates\_navbar.hbs" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\handlebars.js" />
+    <Content Include="Scripts\handlebars.runtime.js" />
+    <Content Include="Scripts\headless-ember.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -209,7 +213,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\app\controllers\" />
     <Folder Include="Scripts\app\models\" />
+    <Folder Include="Scripts\app\views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
