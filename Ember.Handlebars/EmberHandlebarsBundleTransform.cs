@@ -16,8 +16,6 @@ public class EmberHandlebarsBundleTransform : IBundleTransform {
     public void Process( BundleContext context, BundleResponse response ) {
         var builder = new Ember.Handlebars.TemplateBuilder();
 
-        
-
         foreach ( var assetFile in response.Files ) {
             var path = context.HttpContext.Server.MapPath(assetFile.VirtualFile.VirtualPath.Replace("/", "\\"));
             var template = File.ReadAllText( path );
