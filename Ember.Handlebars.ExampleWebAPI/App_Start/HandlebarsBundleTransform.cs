@@ -6,7 +6,7 @@ using System.Web.Optimization;
 
 namespace Ember.Handlebars.ExampleWebAPI
 {
-    public class EmberHandlebarsBundleTransform : IBundleTransform
+    public class HandlebarsBundleTransform : IBundleTransform
     {
         public void Process(BundleContext context, BundleResponse response)
         {
