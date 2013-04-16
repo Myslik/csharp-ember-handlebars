@@ -1,0 +1,1 @@
+﻿App.AppHomeRoute = Em.Route.extend();

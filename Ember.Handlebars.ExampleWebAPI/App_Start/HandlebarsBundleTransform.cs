@@ -6,7 +6,7 @@ using System.Web.Optimization;
 
 namespace Ember.Handlebars.ExampleWebAPI
 {
-    public class EmberHandlebarsBundleTransform : IBundleTransform
+    public class HandlebarsBundleTransform : IBundleTransform
     {
         public void Process(BundleContext context, BundleResponse response)
         {
@@ -15,9 +15,9 @@ namespace Ember.Handlebars.ExampleWebAPI
 
             foreach (var assetFile in response.Files)
             {
-                var path = context.HttpContext.Server.MapPath(assetFile.VirtualPath);
+                var path = context.HttpContext.Server.MapPath(assetFile.VirtualFile.VirtualPath.Replace("/", "\\"));
                 var template = File.ReadAllText(path);
-                var templateName = Path.GetFileNameWithoutExtension(path).ToCamelCase();                
+                var templateName = Path.GetFileNameWithoutExtension(path).Replace("-", "/");
                 builder.Register(templateName, template);
             }
 

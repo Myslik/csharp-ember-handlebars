@@ -3,6 +3,7 @@ csharp-ember-handlebars
 
 .NET Library for pre-compilation of Handlebars templates directly into Ember's `TEMPLATES` collection. 
 
+![NuGet-Install](https://raw.github.com/MilkyWayJoe/csharp-ember-handlebars/master/nuget.png)
 ## Example
 
 In order to register a template, the builder expects a string with the template name and and another 
@@ -74,21 +75,21 @@ public class EmberHandlebarsBundleTransform : IBundleTransform {
         set { this.minifyTemplates = value; }
     }
 
-    public void Process(BundleContext context, BundleResponse response) {
+    public void Process( BundleContext context, BundleResponse response ) {
         var builder = new Ember.Handlebars.TemplateBuilder();
 
-        foreach (var assetFile in response.Files) {
-            var path = context.HttpContext.Server.MapPath(assetFile.VirtualPath);
-            var template = File.ReadAllText(path);
-            var templateName = Path.GetFileNameWithoutExtension(path).ToCamelCase();                
-            builder.Register(templateName, template);
+        foreach ( var assetFile in response.Files ) {
+            var path = context.HttpContext.Server.MapPath(assetFile.VirtualFile.VirtualPath.Replace("/", "\\"));
+            var template = File.ReadAllText( path );
+            var templateName = Path.GetFileNameWithoutExtension( path ).Replace("-", "/");
+            builder.Register( templateName, template );
         }
 
         var content = builder.ToString();
-        if (minifyTemplates) {
+        if ( minifyTemplates ) {
             var minifier = new Minifier();
-            var c = minifier.MinifyJavaScript(builder.ToString());
-            if (minifier.ErrorList.Count <= 0) {
+            var c = minifier.MinifyJavaScript(content);
+            if ( minifier.ErrorList.Count <= 0 ) {
                 content = c;
             }
         }

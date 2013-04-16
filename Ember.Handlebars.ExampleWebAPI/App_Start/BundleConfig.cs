@@ -6,19 +6,23 @@ namespace Ember.Handlebars.ExampleWebAPI {
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles) {
             bundles.Add(new Bundle("~/bundles/base", new JsMinify()).Include(
-                        "~/scripts/vendor/jquery-{version}.js",
-                        "~/scripts/vendor/bootstrap.js",
-                        "~/scripts/vendor/handlebars.runtime.js",
-                        "~/scripts/vendor/ember-1.0.0-rc.1.js"));
+                        "~/scripts/jquery-{version}.js",
+                        "~/scripts/bootstrap.js",
+                        "~/scripts/handlebars.runtime.js",
+                        "~/scripts/ember-1.0.0-rc.2.js",
+                        "~/scripts/ember-data.js",
+                        "~/scripts/app/extensions/webapi_serializer.js",
+                        "~/scripts/app/extensions/webapi_adapter.js"));
 
             bundles.Add(new Bundle("~/bundles/modernizr", new JsMinify()).Include(
-                        "~/scripts/vendor/modernizr-*"));
+                        "~/scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform())
                         .Include("~/scripts/app/templates/*.hbs"));
 
             bundles.Add(new Bundle("~/bundles/app", new JsMinify()).Include(
                         "~/scripts/app/App.js",
+                        "~/scripts/app/setup/*.js",
                         "~/scripts/app/models/*.js",
                         "~/scripts/app/views/*.js",
                         "~/scripts/app/controllers/*.js",
@@ -26,8 +30,8 @@ namespace Ember.Handlebars.ExampleWebAPI {
 
             bundles.Add(new Bundle("~/Content/css", new CssMinify()).Include(
                 "~/content/bootstrap.css",
-                "~/content/bootstrap-stickyfooter.css",
-                "~/content/bootstrap-responsive.css"));
+                "~/content/bootstrap-responsive.css",
+                "~/content/site.css"));
 
         }
     }
