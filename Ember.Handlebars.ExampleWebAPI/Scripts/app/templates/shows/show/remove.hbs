@@ -1,0 +1,18 @@
+﻿<fieldset>
+  <legend>Remove Show: {{unbound title}}</legend>
+  {{partial "shows/_details"}}
+</fieldset>
+
+<div class="well">
+  <h4>
+    Are you sure you want to remove <em>{{title}}</em> from your favorite shows?
+  </h4>
+</div>
+
+<button {{action confirmRemove this}} class="btn btn-danger">
+    <i class="icon-check icon-white"></i>
+    Remove
+</button>
+{{#linkTo shows.index class="btn btn-small"}}
+	<i class="icon-ban-circle"></i> Cancel
+{{/linkTo}}

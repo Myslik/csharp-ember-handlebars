@@ -1,15 +1,16 @@
 ﻿{{partial navbar}}
-<br /><br />
 <div id="wrap">
-  <div class="container">
-    {{outlet}}
-  </div>
-  <div id="push">&nbsp;</div>
-</div>
-
-<div id="footer">
-  <div class="container">
-    &copy;2013 {{unbound App.author}}
-  </div>
+    <div class="container">
+        <div class="visible-desktop">
+            <br /><br /><br />
+        </div>
+        {{partial flash}}
+        {{outlet}}
+    </div>
+    <div id="footer">
+        <div class="container">
+        &copy;2013 {{unbound App.author}}
+        </div>
+    </div>
 </div>
 

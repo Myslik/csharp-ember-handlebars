@@ -18,15 +18,17 @@ namespace Ember.Handlebars.ExampleWebAPI {
                         "~/scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform())
-                        .Include("~/scripts/app/templates/*.hbs"));
+                   .IncludeDirectory("~/scripts/app/templates", "*.hbs", true));
 
             bundles.Add(new Bundle("~/bundles/app", new JsMinify()).Include(
-                        "~/scripts/app/App.js",
-                        "~/scripts/app/setup/*.js",
-                        "~/scripts/app/models/*.js",
-                        "~/scripts/app/views/*.js",
-                        "~/scripts/app/controllers/*.js",
-                        "~/scripts/app/routes/*.js"));
+                "~/scripts/app/App.js",
+                "~/scripts/app/setup/*.js",
+                "~/scripts/app/models/*.js",
+                "~/scripts/app/views/*.js",
+                "~/scripts/app/controllers/*.js",
+                "~/scripts/app/routes/*.js",
+                "~/scripts/app/models/fixtures/*.js"
+            ));
 
             bundles.Add(new Bundle("~/Content/css", new CssMinify()).Include(
                 "~/content/bootstrap.css",

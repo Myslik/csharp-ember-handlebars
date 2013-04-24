@@ -1,7 +1,7 @@
 ﻿/// <reference path="../vendor/ember.js" />
 
 window.App = Em.Application.create({
-    name: 'Ember + Web API',
+    display_name: 'Ember + Web API',
     author: 'You'
 });
 

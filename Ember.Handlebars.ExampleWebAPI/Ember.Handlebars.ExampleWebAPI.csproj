@@ -49,7 +49,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.5.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -151,17 +151,31 @@
     <Content Include="Images\favicon.png" />
     <Content Include="Images\glyphicons-halflings-white.png" />
     <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Scripts\app\controllers\application_controller.js" />
+    <Content Include="Scripts\app\controllers\shows_controller.js" />
+    <Content Include="Scripts\app\controllers\show_controller.js" />
     <Content Include="Scripts\app\extensions\webapi_adapter.js" />
     <Content Include="Scripts\app\extensions\webapi_serializer.js" />
     <None Include="Scripts\app\templates\application.hbs">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Scripts\app\templates\app-home.hbs" />
-    <None Include="Scripts\app\templates\app-about.hbs" />
-    <None Include="Scripts\app\templates\app-contact.hbs" />
+    <Content Include="Scripts\app\models\fixtures\show_fixtures.js" />
+    <Content Include="Scripts\app\models\show.js" />
+    <Content Include="Scripts\app\routes\shows_add_route.js" />
+    <Content Include="Scripts\app\routes\shows_route.js" />
+    <Content Include="Scripts\app\routes\show_edit_route.js" />
+    <Content Include="Scripts\app\routes\show_remove_route.js" />
+    <Content Include="Scripts\app\routes\show_route.js" />
+    <Content Include="Scripts\app\templates\app\home.hbs" />
+    <Content Include="Scripts\app\templates\shows\index.hbs" />
+    <Content Include="Scripts\app\templates\shows\_form.hbs" />
+    <Content Include="Scripts\app\templates\shows\show\show.hbs" />
+    <Content Include="Scripts\app\templates\shows\add.hbs" />
+    <Content Include="Scripts\app\templates\shows\show\edit.hbs" />
+    <Content Include="Scripts\app\templates\shows\show\remove.hbs" />
+    <Content Include="Scripts\app\templates\shows\_details.hbs" />
+    <Content Include="Scripts\app\templates\_flash.hbs" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\app\routes\app_contact_route.js" />
-    <Content Include="Scripts\app\routes\app_about_route.js" />
     <Content Include="Scripts\app\routes\app_home_route.js" />
     <Content Include="Scripts\app\routes\app_route.js" />
     <Content Include="Scripts\app\routes\index_route.js" />
@@ -213,8 +227,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\app\controllers\" />
-    <Folder Include="Scripts\app\models\" />
     <Folder Include="Scripts\app\views\" />
   </ItemGroup>
   <ItemGroup>
