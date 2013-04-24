@@ -3,7 +3,10 @@ csharp-ember-handlebars
 
 .NET Library for pre-compilation of Handlebars templates directly into Ember's `TEMPLATES` collection. 
 
-![NuGet-Install](https://raw.github.com/MilkyWayJoe/csharp-ember-handlebars/master/nuget.png)
+```
+PM> Install-Package csharp-ember-handlebars-compiler -Pre 
+```
+
 ## Example
 
 In order to register a template, the builder expects a string with the template name and and another 
@@ -37,8 +40,7 @@ This library now has a built-in implementation of `IBundleTransform` which can b
 `BundleConfig` class as shown below:
 
 ```csharp
-     bundles.Add(new Bundle("~/bundles/templates",
-             new EmberHandlebarsBundleTransform())
+     bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform())
             .IncludeDirectory("~/scripts/app/templates", "*.hbs", true)
      );
 ```
@@ -69,8 +71,7 @@ Optimizations must be enabled in Global.asax.cs Application_Start method:
 The pre-compiled templates are minified by default, but if for some reason 
 one needs the template not to be minified, do:
       
-     bundles.Add(new Bundle("~/bundles/templates",
-        new EmberHandlebarsBundleTransform() { minifyTemplates = false })
+     bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform() { minifyTemplates = false })
         .IncludeDirectory("~/scripts/app/templates", "*.hbs", true)
      ); 
                  
@@ -122,51 +123,3 @@ the dash (`-`) with a slash (`/`) since Windows does not allow special character
 Note: The built-in `EmberHandlebarsBundleTransform` allows your templates to have whichever extension 
 that better suits your development process. The examples above use *.hbs as an extension but it could be 
 something else, like *.html for example.
-
-## Creating a custom implementation of IBundleTransform
-The code snippet below shows the implementation of the built-in `EmberHandlebarsBundleTransform` class which you can 
-rename and adapt to your needs:
-
-```csharp
-using System;
-using System.IO;
-using System.Web;
-using System.Web.Optimization;
-using Microsoft.Ajax.Utilities;
-
-public class EmberHandlebarsBundleTransform : IBundleTransform {
-    
-    private bool minifyTemplates = true;
-    
-    public bool MinifyTemplates {
-        get { return this.minifyTemplates; }
-        set { this.minifyTemplates = value; }
-    }
-
-    public void Process( BundleContext context, BundleResponse response ) {
-        var builder = new Ember.Handlebars.TemplateBuilder();
-
-        foreach ( var assetFile in response.Files ) {
-            var path = context.HttpContext.Server.MapPath(assetFile.VirtualFile.VirtualPath.Replace("/", "\\"));
-            var template = File.ReadAllText( path );
-            var templateName = Path.GetFileNameWithoutExtension( path ).Replace("-", "/");
-            builder.Register( templateName, template );
-        }
-
-        var content = builder.ToString();
-        if ( minifyTemplates ) {
-            var minifier = new Minifier();
-            var c = minifier.MinifyJavaScript(content);
-            if ( minifier.ErrorList.Count <= 0 ) {
-                content = c;
-            }
-        }
-
-        response.ContentType = "text/javascript";
-        response.Cacheability = HttpCacheability.Public;
-        response.Content = content;
-
-    }
-}
-```
-
