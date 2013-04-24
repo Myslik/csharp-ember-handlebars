@@ -12,7 +12,10 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           {{#linkTo "app.home" tagName="li"}}
-            <a {{bindAttr href="view.href"}}>Home</a>
+            <a {{bindAttr href="view.href"}}>
+              <i class="icon-home"></i>  
+              Home
+            </a>
           {{/linkTo}}
           {{#linkTo shows tagName="li"}}
             <a {{bindAttr href="view.href" }}>
