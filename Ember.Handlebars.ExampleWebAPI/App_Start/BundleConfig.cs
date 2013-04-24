@@ -66,7 +66,8 @@ namespace Ember.Handlebars.ExampleWebAPI {
                  ); 
                  
                  Template names must follow Ember.js Naming Conventions found in:
-                 http://emberjs.com/guides/concepts/naming-conventions/
+                 - http://emberjs.com/guides/concepts/naming-conventions/
+                 - http://emberjs.com/guides/routing/defining-your-routes/
                  
                  Templates in sub directories will have their name appended to the parent directory, even if the 
                  parent directory is also a sub-directory. Consider the following router map:
@@ -92,6 +93,14 @@ namespace Ember.Handlebars.ExampleWebAPI {
                             |
                             |_index.hbs
                             |_add.hbs 
+                  
+                 The templates will be compiled as
+                 
+                 ~/scripts/app/templates/shows/show/default.hbs  => Em.TEMPLATES["show"]
+                 ~/scripts/app/templates/shows/show/edit.hbs     => Em.TEMPLATES["show/edit"]
+                 ~/scripts/app/templates/shows/show/remove.hbs   => Em.TEMPLATES["show/remove"]
+                 ~/scripts/app/templates/shows/index.hbs          => Em.TEMPLATES["shows/index"]
+                 ~/scripts/app/templates/shows/add.hbs           => Em.TEMPLATES["shows/add"]
                  
                  Note that the templates named `default.hbs` under a directory `show` will be compiled as 
                  `Em.TEMPLATES["show"]`. The same happens if the template has the same name of the parent
