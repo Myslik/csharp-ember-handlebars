@@ -1,0 +1,1 @@
+﻿App.ShowsController = Em.ArrayController.extend();

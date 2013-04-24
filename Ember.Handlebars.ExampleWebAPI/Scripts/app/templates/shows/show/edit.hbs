@@ -1,0 +1,12 @@
+﻿<fieldset>
+	<legend>Edit Show: {{unbound title}}</legend>
+	{{partial shows/_form}}
+</fieldset>
+<button {{action confirmEdit this}} class="btn btn-info">
+    <i class="icon-check icon-white"></i>
+    Save
+</button>
+<button {{action cancelEdit this}} class="btn">
+    <i class="icon-ban-circle"></i>
+    Cancel
+</button>

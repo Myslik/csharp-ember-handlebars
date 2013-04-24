@@ -7,4 +7,16 @@ App.Router.map(function () {
         this.route('about'),
         this.route('contact')
     });
+
+    this.resource('shows', function () {
+
+        this.route('add')
+
+        this.resource('show', { path: ':show_id' }, function () {
+            this.route('edit')
+            this.route('remove')
+        })
+
+    })
+
 });

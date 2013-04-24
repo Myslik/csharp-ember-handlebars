@@ -22,7 +22,11 @@ namespace Ember.Handlebars.ExampleWebAPI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            BundleTable.EnableOptimizations = true;
+
+            if (!HttpContext.Current.IsDebuggingEnabled) {
+                // required to precompile Handlebars templates into Ember.TEMPLATES
+                BundleTable.EnableOptimizations = true;
+            }
         }
     }
 }
