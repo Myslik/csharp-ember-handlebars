@@ -22,11 +22,8 @@
                                    <link rel="shortcut icon" href="@Url.Content("~/Images/favicon.png")">
 </head>
 <body>
-    @RenderBody()
-
     @Scripts.Render("~/bundles/base")
-    @Scripts.Render("~/bundles/templates")
-    @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)
+    @RenderBody()
 </body>
 </html>
