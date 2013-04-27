@@ -169,12 +169,12 @@
     <Content Include="Scripts\app\routes\show_route.js" />
     <Content Include="Scripts\app\templates\app\home.hbs" />
     <Content Include="Scripts\app\templates\shows\index.hbs" />
-    <Content Include="Scripts\app\templates\shows\_form.hbs" />
-    <Content Include="Scripts\app\templates\shows\show\show.hbs" />
+    <Content Include="Scripts\app\templates\_show_form.hbs" />
+    <Content Include="Scripts\app\templates\shows\show\index.hbs" />
     <Content Include="Scripts\app\templates\shows\add.hbs" />
     <Content Include="Scripts\app\templates\shows\show\edit.hbs" />
     <Content Include="Scripts\app\templates\shows\show\remove.hbs" />
-    <Content Include="Scripts\app\templates\shows\_details.hbs" />
+    <Content Include="Scripts\app\templates\_show_details.hbs" />
     <Content Include="Scripts\app\templates\_flash.hbs" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\app\routes\app_home_route.js" />
@@ -184,6 +184,8 @@
     <Content Include="Scripts\app\setup\store.js" />
     <Content Include="Scripts\ember-1.0.0-rc.2.js" />
     <Content Include="Scripts\ember-1.0.0-rc.2.min.js" />
+    <Content Include="Scripts\ember-1.0.0-rc.3.js" />
+    <Content Include="Scripts\ember-1.0.0-rc.3.min.js" />
     <Content Include="Scripts\ember-data.js" />
     <Content Include="Scripts\ember-data.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />

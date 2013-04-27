@@ -23,6 +23,10 @@
 </head>
 <body>
     @Scripts.Render("~/bundles/base")
+    @if ( HttpContext.Current.IsDebuggingEnabled ) {<script type="text/javascript" src="@Url.Content("~/scripts/ember-1.0.0-rc.3.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/ember-data.js")"></script>} else {
+    <script type="text/javascript" src="@Url.Content("~/scripts/ember-1.0.0-rc.3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/ember-data.min.js")"></script>}
     @RenderSection("scripts", required: false)
     @RenderBody()
 </body>
