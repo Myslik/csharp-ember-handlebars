@@ -33,7 +33,11 @@ Ember.TEMPLATES["application"] = Ember.Handlebars.template(
 ```
 
 The above shows the basic registration of templates, but going forward you might want to add this functionality 
-as part of your application's build process including this functionality directly into the `BundleConfig` class.
+as part of your application's build process including this functionality directly into the `BundleConfig` class. Refer to 
+Example Web API project. 
+
+__Note:__ To run the Web API Sample, open the Package Manager Console and execute `PM> Update-Database` to create and
+populate the database.
 
 ## Built-in IBundleTransform Implementation
 This library now has a built-in implementation of `IBundleTransform` which can be used directly in ASP.NET MVC's 
