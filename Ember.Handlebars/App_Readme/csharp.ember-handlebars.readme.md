@@ -68,3 +68,5 @@ Note that the templates named `default.hbs` under a directory `show` will be com
 If one does not need to separate templates in sub directories, but needs to name templates according to conventions, a character replacement will compile `show-edit` to `Em.TEMPLATES["show/edit"]` replacing the dash (`-`) with a slash (`/`) since Windows does not allow special characters in file or folder names. 
 
 Note: The built-in `EmberHandlebarsBundleTransform` allows your templates to have whichever extension that better suits your development process. The examples above use `*.hbs` as an extension but it could be something else, like `*.html` for example.
+
+Note 2: For details see sample app in [GitHub](https://github.com/Myslik/csharp-ember-handlebars).
