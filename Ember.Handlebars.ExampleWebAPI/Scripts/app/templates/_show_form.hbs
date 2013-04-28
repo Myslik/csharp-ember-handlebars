@@ -1,32 +1,40 @@
 ﻿<div class="row-fluid">
-	<div class="span2" style="text-align: right">
-		Title:
-	</div>
-	<div class="span9">
-		{{view Ember.TextField valueBinding="title"}}
-	</div>
-</div>
-<div class="row-fluid">
-  <div class="span2" style="text-align: right">
-    Network:
+  <div class="span1">
+    <strong>
+      Title:
+    </strong>
   </div>
-  <div class="span9">
-    {{view Ember.TextField valueBinding="network"}}
+  <div class="span10">
+    {{input type="text" placeholder="Title" value=title}}
   </div>
 </div>
 <div class="row-fluid">
-  <div class="span2" style="text-align: right">
-    Category:
+  <div class="span1">
+    <strong>
+      Network:
+    </strong>
   </div>
-  <div class="span9">
-    {{view Ember.TextField valueBinding="category"}}
+  <div class="span10">
+    {{input type="text" placeholder="Network" value=network}}
   </div>
 </div>
 <div class="row-fluid">
-  <div class="span2" style="text-align: right">
-    Year:
+  <div class="span1">
+    <strong>
+      Category:
+    </strong>
   </div>
-  <div class="span9">
-    {{view Ember.TextField valueBinding="year"}}
+  <div class="span10">
+    {{input type="text" placeholder="Category" value=category}}
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span1">
+    <strong>
+      Year:
+    </strong>
+  </div>
+  <div class="span10">
+    {{input type="text" placeholder="Year" value=year}}
   </div>
 </div>

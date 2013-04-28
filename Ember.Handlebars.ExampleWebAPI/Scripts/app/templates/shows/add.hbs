@@ -1,5 +1,7 @@
 ﻿<fieldset>
-	<legend>Add Show</legend>
+	<legend>
+    Add Show  {{#if isDirty}}<i class="icon-asterisk"></i>{{/if}}
+  </legend>
 	{{partial show_form}}
 </fieldset>
 <button {{action confirmAdd this}} class="btn btn-info">

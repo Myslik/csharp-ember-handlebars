@@ -1,14 +1,15 @@
 ﻿<h3>My Favorite TV Shows</h3>
-{{#linkTo shows.add class="btn btn-small btn-info"}}
-	<i class="icon-plus-sign"></i> Add
+{{#linkTo shows.add class="btn btn-info"}}
+	<i class="icon-plus-sign"></i> 
+  Add
 {{/linkTo}}
 <table class="table table-hover">
 	<thead>
 		<tr>
 			<th>Title</th>
-			<th>Network</th>
+      <th class="hidden-phone hidden-tablet">Network</th>
 			<th>Category</th>
-			<th>Year</th>
+      <th class="hidden-phone hidden-tablet">Year</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -16,26 +17,26 @@
 		{{#each show in controller}}
 		<tr>
 			<td>
-				{{show.title}}
+				{{unbound show.title}}
 			</td>
-			<td>
-				{{show.network}}
-			</td>
-			<td>
-				{{show.category}}
-			</td>
-			<td>
-				{{show.year}}
-			</td>
+      <td class="hidden-phone hidden-tablet">
+        {{unbound show.network}}
+      </td>
+      <td>
+        {{unbound show.category}}
+      </td>
+      <td class="hidden-phone hidden-tablet">
+        {{unbound show.year}}
+      </td>
 			<td>
 				{{#linkTo show show class="btn btn-small"}}
-					<i class="icon-eye-open"></i> <span class="visible-desktop">Details</span>
+					<i class="icon-eye-open"></i> <span class="hidden-phone hidden-tablet">Details</span>
 				{{/linkTo}}
 				{{#linkTo show.edit show class="btn btn-small"}}
-					<i class="icon-edit"></i> <span class="visible-desktop">Edit</span>
+					<i class="icon-edit"></i> <span class="hidden-phone hidden-tablet">Edit</span>
 				{{/linkTo}}
 				{{#linkTo show.remove show class="btn btn-small btn-warning"}}
-					<i class="icon-remove"></i> <span class="visible-desktop">Remove</span>
+					<i class="icon-remove"></i> <span class="hidden-phone hidden-tablet">Remove</span>
 				{{/linkTo}}
 			</td>
 		</tr>

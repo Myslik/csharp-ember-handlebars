@@ -1,5 +1,5 @@
 ﻿<fieldset>
-	<legend>Edit Show: {{unbound title}}</legend>
+	<legend>Edit Show: {{unbound title}} {{#if isDirty}}<i class="icon-asterisk"></i>{{/if}}</legend>
 	{{partial show_form}}
 </fieldset>
 <button {{action confirmEdit this}} class="btn btn-info">
