@@ -69,12 +69,16 @@
     <Compile Include="ScriptEngine.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Readme\csharp.ember-handlebars.readme.md" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="compiler.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\csharp.ember-handlebars.licence.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
