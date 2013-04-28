@@ -4,7 +4,20 @@
 /// <reference path="../extensions/webapi_serializer.js" />
 /// <reference path="../extensions/webapi_adapter.js" />
 
-App.Store = DS.Store.extend({
-    revision: 12,
-    adapter: 'DS.FixtureAdapter'
-});
+var adapter = DS.WebAPIAdapter.create( {
+    namespace: "api",
+    bulkCommit: false,
+    antiForgeryTokenSelector: "#antiForgeryToken"
+} );
+
+var serializer = Ember.get( adapter, 'serializer' );
+
+serializer.configure( 'App.Show', {
+    sideloadAs: 'shows',
+    primaryKey: 'showId'
+} );
+
+App.store = DS.Store.create( {
+    adapter: adapter,
+    revision: 12
+} );

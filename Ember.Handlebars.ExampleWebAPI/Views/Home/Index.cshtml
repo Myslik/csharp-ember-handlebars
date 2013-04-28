@@ -1,4 +1,15 @@
-﻿@if (HttpContext.Current.IsDebuggingEnabled) {
+﻿@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;                
+    }
+}
+
+<input type="hidden" value="@GetAntiForgeryToken()" />
+
+@if (HttpContext.Current.IsDebuggingEnabled) {
     @Html.RenderEmberTemplates()
 } else {
     @Scripts.Render("~/bundles/templates")

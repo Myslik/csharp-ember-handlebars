@@ -15,14 +15,12 @@
     events: {
 
         confirmEdit: function (record) {
-            store = this.get('store');
-            store.get('defaultTransaction').commit();
+            App.store.get('defaultTransaction').commit();
             this.controllerFor('application').set('notification', 'Show has been updated');
             this.transitionTo('shows.index');
         },
         cancelEdit: function (record) {
-            store = this.get('store');
-            store.get('defaultTransaction').rollback();
+            App.store.get('defaultTransaction').rollback();
             this.transitionTo('shows.index');
         }
 
