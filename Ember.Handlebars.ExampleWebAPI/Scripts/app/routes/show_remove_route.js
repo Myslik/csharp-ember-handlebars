@@ -16,8 +16,7 @@
 
         confirmRemove: function (record) {
             record.deleteRecord();
-            store = this.get('store');
-            store.get('defaultTransaction').commit();
+            App.store.get('defaultTransaction').commit();
             this.controllerFor('application').set('notification', 'Show has been removed');
             this.transitionTo('shows.index');
         }

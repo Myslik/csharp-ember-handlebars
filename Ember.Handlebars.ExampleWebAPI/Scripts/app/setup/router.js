@@ -2,21 +2,17 @@
 /// <reference path="../App.js" />
 
 App.Router.map(function () {
+    
     this.resource('app', function () {
-        this.route('home'),
-        this.route('about'),
-        this.route('contact')
+        this.route('home');
     });
 
     this.resource('shows', function () {
-
-        this.route('add')
-
+        this.route('add');
         this.resource('show', { path: ':show_id' }, function () {
-            this.route('edit')
-            this.route('remove')
-        })
-
-    })
+            this.route('edit');
+            this.route('remove');
+        });
+    });
 
 });

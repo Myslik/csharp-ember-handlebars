@@ -213,10 +213,6 @@ DS.WebAPIAdapter = DS.RESTAdapter.extend({
         }
 
         jQuery.ajax(hash);
-    },
-
-    pluralize: function (string) {
-        return string;
-    },
+    }
 
 });

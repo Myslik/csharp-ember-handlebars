@@ -7,6 +7,9 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+
 namespace Ember.Handlebars.ExampleWebAPI
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -23,10 +26,14 @@ namespace Ember.Handlebars.ExampleWebAPI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            var JsonConfig = GlobalConfiguration.Configuration;
+            JsonConfig.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
             if (!HttpContext.Current.IsDebuggingEnabled) {
                 // required to precompile Handlebars templates into Ember.TEMPLATES
                 BundleTable.EnableOptimizations = true;
             }
+
         }
     }
 }

@@ -12,11 +12,7 @@ namespace Ember.Handlebars.ExampleWebAPI {
                 bundles.Add(new Bundle("~/bundles/base", new JsMinify()).Include(
                     "~/scripts/jquery-{version}.js",
                     "~/scripts/bootstrap.js",
-                    "~/scripts/handlebars.runtime.js",
-                    "~/scripts/ember-1.0.0-rc.2.js",
-                    "~/scripts/ember-data.js",
-                    "~/scripts/app/extensions/webapi_serializer.js",
-                    "~/scripts/app/extensions/webapi_adapter.js"
+                    "~/scripts/handlebars.runtime.js"
                 ));
 
                 bundles.Add(new Bundle("~/bundles/modernizr", new JsMinify()).Include(
@@ -41,6 +37,10 @@ namespace Ember.Handlebars.ExampleWebAPI {
 
 
                 /* 
+                 
+                 NOTE: Ember 1.0 RC3 is not compatible with bundling and minifying. Removing all-ember-things
+                       from the bundles in favor of script tags in _Layout.cshtml
+                 
                  In developmet, the template will be rendered directly in the cshtml view
                  See ~/Views/Home/Index.cshtml 
               
@@ -121,11 +121,7 @@ namespace Ember.Handlebars.ExampleWebAPI {
                 bundles.Add(new ScriptBundle("~/bundles/base").Include(
                     "~/scripts/jquery-{version}.js",
                     "~/scripts/bootstrap.js",
-                    "~/scripts/handlebars.js",
-                    "~/scripts/ember-1.0.0-rc.2.js",
-                    "~/scripts/ember-data.js",
-                    "~/scripts/app/extensions/webapi_serializer.js",
-                    "~/scripts/app/extensions/webapi_adapter.js"
+                    "~/scripts/handlebars.js"
                 ));
 
                 bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
