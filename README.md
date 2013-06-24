@@ -44,20 +44,16 @@ This library now has a built-in implementation of `IBundleTransform` which can b
 `BundleConfig` class as shown below:
 
 ```csharp
-     bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform())
-            .IncludeDirectory("~/scripts/app/templates", "*.hbs", true)
-     );
+      bundles.Add(new Bundle(EmberJs.BundleNames.Templates,
+          new EmberHandlebarsBundleTransform())
+          .IncludeDirectory(EmberJs.TemplatesPath, "*.hbs", true)
+      );
 ```
 
 In developmet, the template will be rendered directly in the cshtml view. See `~/Views/Home/Index.cshtml`
 
-    @if (HttpContext.Current.IsDebuggingEnabled) {
-        @Html.RenderEmberTemplates()
-    } else {
-        @Scripts.Render("~/bundles/templates")
-    }
-
-    @Scripts.Render("~/bundles/app")
+    // will render appropriately based on whether optimizations are enabled
+    @Html.RenderEmberTemplates()   
               
 To enable the bundle with pre-compilation of Handlebars templates, edit 
 the web.config to disable debug, setting it to false:
@@ -75,8 +71,8 @@ Optimizations must be enabled in Global.asax.cs Application_Start method:
 The pre-compiled templates are minified by default, but if for some reason 
 one needs the template not to be minified, do:
       
-     bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform() { minifyTemplates = false })
-        .IncludeDirectory("~/scripts/app/templates", "*.hbs", true)
+     bundles.Add(new Bundle(EmberJs.BundleNames.Templates, new EmberHandlebarsBundleTransform() { minifyTemplates = false })
+        .IncludeDirectory(EmberJs.TemplatesPath, "*.hbs", true)
      ); 
                  
 Template names must follow Ember.js Naming Conventions found in:

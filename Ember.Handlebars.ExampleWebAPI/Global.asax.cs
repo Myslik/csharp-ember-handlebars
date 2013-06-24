@@ -28,12 +28,9 @@ namespace Ember.Handlebars.ExampleWebAPI
 
             var JsonConfig = GlobalConfiguration.Configuration;
             JsonConfig.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
-            if (!HttpContext.Current.IsDebuggingEnabled) {
-                // required to precompile Handlebars templates into Ember.TEMPLATES
-                BundleTable.EnableOptimizations = true;
-            }
-
+            
+            // required to precompile Handlebars templates into Ember.TEMPLATES
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

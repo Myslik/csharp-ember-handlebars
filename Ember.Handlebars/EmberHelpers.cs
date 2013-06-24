@@ -3,13 +3,17 @@ using System.IO;
 using System.Web;
 using System.Web.Caching;
 using System.Web.Mvc;
+using System.Web.Optimization;
 using Ember;
 
 public static class HtmlHelperExtensions
 {
-    public static MvcHtmlString RenderEmberTemplates(this HtmlHelper helper, string path = "", bool noTemplateName = false)
+    public static IHtmlString RenderEmberTemplates(this HtmlHelper helper, string path = "", bool noTemplateName = false)
     {
         var templateFolder = EmberJs.ServerMappedTemplatesPath;
+
+        if (BundleTable.EnableOptimizations)
+            return Scripts.Render(EmberJs.BundleNames.Templates);
 
         if (HttpRuntime.Cache[path] == null)
         {

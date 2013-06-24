@@ -1,4 +1,5 @@
-﻿@functions{
+﻿@using Ember
+@functions{
     public string GetAntiForgeryToken()
     {
         string cookieToken, formToken;
@@ -9,9 +10,5 @@
 
 <input type="hidden" value="@GetAntiForgeryToken()" />
 
-@if (HttpContext.Current.IsDebuggingEnabled) {
-    @Html.RenderEmberTemplates()
-} else {
-    @Scripts.Render("~/bundles/templates")
-}
-    @Scripts.Render("~/bundles/app")
+@Html.RenderEmberTemplates()
+@Scripts.Render(EmberJs.BundleNames.App)
