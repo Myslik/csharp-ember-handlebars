@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Caching;
 using System.Web.Mvc;
+using Ember;
 
 public static class HtmlHelperExtensions
 {
-    private static string templateFolder = HttpContext.Current.Server.MapPath("scripts/app/templates");
-
     public static MvcHtmlString RenderEmberTemplates(this HtmlHelper helper, string path = "", bool noTemplateName = false)
     {
+        var templateFolder = EmberJs.ServerMappedTemplatesPath;
+
         if (HttpRuntime.Cache[path] == null)
         {
             string absolutePath;
