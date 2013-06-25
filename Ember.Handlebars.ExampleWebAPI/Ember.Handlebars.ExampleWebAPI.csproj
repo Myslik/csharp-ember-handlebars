@@ -188,10 +188,7 @@
     <Content Include="Scripts\app\routes\index_route.js" />
     <Content Include="Scripts\app\setup\router.js" />
     <Content Include="Scripts\app\setup\store.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.2.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.2.min.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.3.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.3.min.js" />
+    <Content Include="Scripts\ember.js" />
     <Content Include="Scripts\ember-data.js" />
     <Content Include="Scripts\ember-data.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />

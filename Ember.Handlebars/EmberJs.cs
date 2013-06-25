@@ -7,12 +7,16 @@ namespace Ember
         static EmberJs()
         {
             TemplatesPath = "~/scripts/app/templates";
-            BundleNames.Templates = "~/bundles/ember/templates";
-            BundleNames.Templates = "~/bundles/ember/app";
         }
 
         public static class BundleNames
         {
+            static BundleNames()
+            {
+                Templates = "~/bundles/ember/templates";
+                App = "~/bundles/ember/app";
+            }
+
             public static string Templates { get; set; }
             public static string App { get; set; }
         }

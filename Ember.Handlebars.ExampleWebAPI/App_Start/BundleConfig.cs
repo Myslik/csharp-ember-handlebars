@@ -11,8 +11,7 @@ namespace Ember.Handlebars.ExampleWebAPI
 
             bundles.Add(new Bundle("~/bundles/base", new JsMinify()).Include(
                 "~/scripts/jquery-{version}.js",
-                "~/scripts/bootstrap.js",
-                "~/scripts/handlebars.runtime.js"
+                "~/scripts/bootstrap.js"
             ));
 
             bundles.Add(new Bundle("~/bundles/modernizr", new JsMinify()).Include(
