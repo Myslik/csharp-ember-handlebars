@@ -21,12 +21,15 @@ public static class HtmlHelperExtensions
             }
             else
             {
-                templateName = path.Replace("\\", "-");
                 absolutePath = Path.Combine(templateFolder, path);
             }
 
             if (File.Exists(absolutePath))
             {
+                if (!string.IsNullOrEmpty(path))
+                {
+                    templateName = path.Replace("\\", "-");                    
+                }
                 int fileExtensionPosition = templateName.LastIndexOf('.');
                 if (fileExtensionPosition > 0)
                 {
