@@ -13,19 +13,11 @@ public static class HtmlHelperExtensions
     {
         if (HttpRuntime.Cache[path] == null)
         {
-            string absolutePath;
-            string templateName = "";
-            if (string.IsNullOrEmpty(path))
-            {
-                absolutePath = templateFolder;
-            }
-            else
-            {
-                absolutePath = Path.Combine(templateFolder, path);
-            }
+            var absolutePath = string.IsNullOrEmpty(path) ? templateFolder : Path.Combine(templateFolder, path);
 
             if (File.Exists(absolutePath))
             {
+                string templateName = "";
                 if (!string.IsNullOrEmpty(path))
                 {
                     templateName = path.Replace("\\", "-");                    
@@ -44,13 +36,9 @@ public static class HtmlHelperExtensions
             {
                 if (Directory.Exists(absolutePath))
                 {
-                    if (templateName.Length > 0 && templateName[templateName.Length - 1] != '-')
-                    {
-                        templateName += "-";
-                    }
                     List<string> dependencyList = new List<string>();
 
-                    MvcHtmlString result = new MvcHtmlString(GetDirectoryTemplates(templateName, "", new DirectoryInfo(absolutePath), dependencyList));
+                    MvcHtmlString result = new MvcHtmlString(GetDirectoryTemplates("", new DirectoryInfo(absolutePath), dependencyList));
                     HttpRuntime.Cache.Insert(path, result, new CacheDependency(dependencyList.ToArray()));
                 }
                 else
@@ -63,7 +51,7 @@ public static class HtmlHelperExtensions
         return HttpRuntime.Cache[path] as MvcHtmlString;
     }
 
-    private static string GetDirectoryTemplates(string templateName, string relativeDirName, DirectoryInfo rootDirectory, List<string> dependencyList)
+    private static string GetDirectoryTemplates(string relativeDirName, DirectoryInfo rootDirectory, List<string> dependencyList)
     {
         dependencyList.Add(rootDirectory.FullName);
 
@@ -76,7 +64,7 @@ public static class HtmlHelperExtensions
 
         foreach (DirectoryInfo subDir in rootDirectory.GetDirectories())
         {
-            content += GetDirectoryTemplates(templateName, newSubRelativeDirName + subDir.Name, subDir, dependencyList);
+            content += GetDirectoryTemplates(newSubRelativeDirName + subDir.Name, subDir, dependencyList);
         }
 
         foreach (FileInfo templateFile in rootDirectory.GetFiles())
@@ -91,7 +79,7 @@ public static class HtmlHelperExtensions
             {
                 relativeDirName += "-";
             }
-            content += ReadTemplate(templateName + relativeDirName + subtemplateName, templateFile);
+            content += ReadTemplate(relativeDirName + subtemplateName, templateFile);
         }
         return content;
     }
