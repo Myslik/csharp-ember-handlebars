@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="EmberHandlebarsBundleTransform.cs" />
     <Compile Include="EmberHelpers.cs" />
+    <Compile Include="EmberJs.cs" />
     <Compile Include="Handlebars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScriptEngine.cs" />

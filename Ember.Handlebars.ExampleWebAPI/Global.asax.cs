@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-
-using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace Ember.Handlebars.ExampleWebAPI
@@ -28,12 +22,9 @@ namespace Ember.Handlebars.ExampleWebAPI
 
             var JsonConfig = GlobalConfiguration.Configuration;
             JsonConfig.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
-            if (!HttpContext.Current.IsDebuggingEnabled) {
-                // required to precompile Handlebars templates into Ember.TEMPLATES
-                BundleTable.EnableOptimizations = true;
-            }
-
+            
+            // required to precompile Handlebars templates into Ember.TEMPLATES
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

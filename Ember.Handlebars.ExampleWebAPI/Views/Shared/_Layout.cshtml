@@ -22,15 +22,12 @@
                                    <link rel="shortcut icon" href="@Url.Content("~/Images/favicon.png")">
 </head>
 <body>
-    @Scripts.Render("~/bundles/base")
-    @if ( HttpContext.Current.IsDebuggingEnabled ) {<script type="text/javascript" src="@Url.Content("~/scripts/ember-1.0.0-rc.3.js")"></script>
+    @Scripts.Render("~/bundles/base")    
+    <script type="text/javascript" src="@Url.Content("~/scripts/handlebars.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/ember.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/scripts/ember-data.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/scripts/app/extensions/webapi_serializer.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/scripts/app/extensions/webapi_adapter.js")"></script>} else {
-    <script type="text/javascript" src="@Url.Content("~/scripts/ember-1.0.0-rc.3.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/scripts/ember-data.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/scripts/app/extensions/webapi_serializer.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/scripts/app/extensions/webapi_adapter.js")"></script>}
+    <script type="text/javascript" src="@Url.Content("~/scripts/app/extensions/webapi_adapter.js")"></script>
     @RenderSection("scripts", required: false)
     @RenderBody()
 </body>
