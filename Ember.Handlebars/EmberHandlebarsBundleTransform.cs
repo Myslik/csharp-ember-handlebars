@@ -39,8 +39,15 @@ public class EmberHandlebarsBundleTransform : IBundleTransform {
             var virtual_root = assetFile.IncludedVirtualPath
                               .Substring( 0, assetFile.IncludedVirtualPath.IndexOf( "\\" ) );
 
-            var virtual_file_path = string.Format("~{0}", assetFile.VirtualFile.VirtualPath)
-                                          .Replace( virtual_root + "/", string.Empty );
+            var virtual_file_path = string.Format("~{0}", assetFile.VirtualFile.VirtualPath);
+
+            var application_path = HttpContext.Current != null ? HttpContext.Current.Request.ApplicationPath : "/";
+
+            var app_less_virtual_file_path = virtual_file_path.Replace("~" + application_path, String.Empty).TrimStart('/');
+
+            virtual_file_path = string.Format("~/{0}", app_less_virtual_file_path)
+                                    .Replace(virtual_root + "/", string.Empty);
+                                    
             var file_extension    = virtual_file_path.Substring(virtual_file_path.LastIndexOf("."));
             
             var template_directory_name = string.Empty;
